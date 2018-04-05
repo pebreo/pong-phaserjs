@@ -20,16 +20,15 @@ outside the viewable screen.
 
 We first add the sprite like this:
 ```javascript
-// preload function
+// put in preload() function
 game.load.image(graphicAssets.ballName, graphicAssets.ballURL);
 
-// create function
+// put in create() function
 this.ballSprite = game.add.sprite(game.world.centerX, game.world.centerY, graphicAssets.ballName);
 ```
 
 Now we initialize the Arcade Physics API like this:
 ```javascript
-// create function
 game.physics.startSystem(Phaser.Physics.ARCADE);
 game.physics.enable(this.ballSprite, Phaser.Physics.ARCADE);
 
@@ -52,7 +51,6 @@ so that a player can score. To disable a boundary, we can set the
 `checkCollision.left` or `checkCollision.right` properties to true or false.
 
 ```javascript
-// 
 this.game.physics.arcade.checkCollision.left = false; // the left boundary
 this.game.physics.arcade.checkCollision.right = false; // the right boundary
 ```
