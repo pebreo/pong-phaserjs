@@ -81,7 +81,8 @@ Inside the custom callback that we write to customize the physics of the ball co
  we define the bounce-back angle when the ball hits the left paddle like this:
 ```javascript
 // left paddle collision 
-   
+var gameProperties = {};
+gameProperties.paddleSegmentAngle = 15;
 returnAngle = segmentHit * gameProperties.paddleSegmentAngle;
 game.physics.arcade.velocityFromAngle(returnAngle, gameProperties.ballVelocity, this.ballSprite.body.velocity);
 ```
